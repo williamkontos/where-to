@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a boilerplate Rails project that uses:
 
-Things you may want to cover:
+* `ruby ~> 2.5`
+* `postgresql` as the database
+* `webpacker` with `react`
+* the `react_on_rails` gem
 
-* Ruby version
+## Setup
 
-* System dependencies
+* `rails db:create` (with your Postgres server up and running)
+* `rails s`
 
-* Configuration
+## Collaboration
 
-* Database creation
+* Talk to an instructor about the next feature / enhancement / bugfix you would like to address
+* Create an issue with a User Story and Acceptance Criteria
+* Create a branch that corresponds with your issue
+* Submit a pull request into master
+* Request code review from one of the project's [CODEOWNERS](https://help.github.com/articles/about-codeowners/)
 
-* Database initialization
+## Deployment
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* `heroku create your-app-name`
+* `heroku buildpacks:set heroku/ruby`
+* `heroku buildpacks:add --index 1 heroku/nodejs`
+* `git push heroku master`
