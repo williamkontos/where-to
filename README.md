@@ -9,7 +9,7 @@ This is a boilerplate Rails project that uses:
 
 ## Instructor Setup
 
-* `git clone https://github.com/wyncode/final_project_template`
+* `git clone git@github.com:wyncode/final_project_template.git`
 * `cd final_project_template`
 * `git remote remove origin`
 * Create a repo on GitHub that matches the project name
