@@ -7,7 +7,18 @@ This is a boilerplate Rails project that uses:
 * `webpacker` with `react`
 * the `react_on_rails` gem
 
-## Setup
+## Instructor Setup
+
+* `git clone https://github.com/wyncode/final_project_template`
+* `cd final_project_template`
+* `git remote remove origin`
+* Create a repo on GitHub that matches the project name
+* Make `master` a [protected branch](https://help.github.com/articles/configuring-protected-branches/)
+* Pull Requests should only be mergeable after 2 reviews
+* At least 1 review needs to be from a [CODEOWNER](https://help.github.com/articles/about-codeowners/)
+* Invite team members as collaborators with write access
+
+## Student Setup
 
 * `rails db:create` (with your Postgres server up and running)
 * `rails s`
@@ -18,7 +29,8 @@ This is a boilerplate Rails project that uses:
 * Create an issue with a User Story and Acceptance Criteria
 * Create a branch that corresponds with your issue
 * Submit a pull request into master
-* Request code review from one of the project's [CODEOWNERS](CODEOWNERS)
+* Request a code review from one of your teammates
+* Once it's approved, request a code review from one or more of the project's [CODEOWNERS](CODEOWNERS)
 
 ## Deployment
 
