@@ -18,7 +18,7 @@ This is a boilerplate Rails project that uses:
 * Create an issue with a User Story and Acceptance Criteria
 * Create a branch that corresponds with your issue
 * Submit a pull request into master
-* Request code review from one of the project's [CODEOWNERS](https://help.github.com/articles/about-codeowners/)
+* Request code review from one of the project's [CODEOWNERS](CODEOWNERS)
 
 ## Deployment
 
