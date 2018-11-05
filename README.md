@@ -13,6 +13,7 @@ This is a boilerplate Rails project that uses:
 * `cd final_project_template`
 * `git remote remove origin`
 * Create a repo on GitHub that matches the project name
+* `git remote add origin that-repo-name` && `git push origin -u master`
 * Make `master` a [protected branch](https://help.github.com/articles/configuring-protected-branches/)
 * Pull Requests should only be mergeable after 2 reviews
 * At least 1 review needs to be from a [CODEOWNER](https://help.github.com/articles/about-codeowners/)
