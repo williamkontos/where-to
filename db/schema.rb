@@ -18,16 +18,20 @@ ActiveRecord::Schema.define(version: 2018_11_07_224551) do
   create_table "dishes", force: :cascade do |t|
     t.string "name"
     t.decimal "price", precision: 8, scale: 2
+    t.bigint "restaurant_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
   end
 
   create_table "restaurants", force: :cascade do |t|
     t.string "name"
     t.string "phone"
     t.string "address"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -38,9 +42,11 @@ ActiveRecord::Schema.define(version: 2018_11_07_224551) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: true
+    t.boolean "admin", default: true, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "dishes", "restaurants"
+  add_foreign_key "restaurants", "users"
 end
