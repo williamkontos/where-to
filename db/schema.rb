@@ -28,7 +28,10 @@ ActiveRecord::Schema.define(version: 2018_11_07_224551) do
     t.string "name"
     t.string "phone"
     t.string "address"
-    t.bigint "user_id"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_restaurants_on_user_id"
@@ -42,7 +45,7 @@ ActiveRecord::Schema.define(version: 2018_11_07_224551) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "admin", default: true, null: false
+    t.boolean "admin", default: false, null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
