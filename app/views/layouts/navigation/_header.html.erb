@@ -6,6 +6,6 @@
     <span class="icon-bar"></span>
   </button>
   <%= link_to 'WhereTo?', 
-      current_user.admin? ? users_path : polls_path, 
+      current_user && current_user.admin? ? users_path : polls_path, 
       class: 'navbar-brand' %>
 </div>
