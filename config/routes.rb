@@ -12,5 +12,9 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :polls
+  resources :restaurants
+
+  resources :polls do
+    resources :restaurant_polls, only: [:index, :show]
+  end
 end
