@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Table from './Table'
 
 class Restaurants extends Component {
   state = {
@@ -10,9 +11,7 @@ class Restaurants extends Component {
     axios.get(`/restaurants.json?name=${name}&address=${address}&phone=${phone}`)
       .then((response) => {
         const restaurants = response.data
-        console.log(response.data)
-        this.setState({ restaurants: restaurants })
-        console.log(this.state)
+        this.setState({ restaurants: restaurants })      
       })
   }
 
@@ -21,10 +20,16 @@ class Restaurants extends Component {
     this.fetchRestaurants(restaurants)
   }
 
+  handleClick() {
+    console.log('The link was clicked')
+  }
+
   render(){
-    const restaurants = this.state
+    const { restaurants } = this.state
     return(
       <div>
+      { <Table restaurants={restaurants} 
+               handleClick={this.handleClick}/> }
       </div>
     )
   }

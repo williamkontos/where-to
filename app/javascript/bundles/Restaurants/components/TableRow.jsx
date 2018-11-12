@@ -3,17 +3,14 @@ import React from 'react'
 const TableRow = props => (
   <tr>
     <td>
-      <span className={props.badge_class}>
-        {props.due_date}
+      <span>
+        <button onClick={props.handleClick} className="btn btn-primary">{props.venue.name}</button>
       </span>
     </td>
     <td>
-      <a
-        href={props.location}
-        className="btn btn-info"
-      >
-        Details
-      </a>
+      <span>
+        {props.venue.address}
+      </span>
     </td>
   </tr>
 )

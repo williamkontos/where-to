@@ -6,15 +6,14 @@ const Table = props => (
     <table className="table">
       <thead>
         <tr>
-          <th style={{width: '70%'}}></th>
-          <th style={{width: '15%'}}></th>
-          <th style={{width: '15%'}}></th>
+          <th style={{width: '80%'}}>Restaurant</th>
+          <th style={{width: '20%'}}>Address</th>
         </tr>
       </thead>
       <tbody>
-        {
+        { 
           props.restaurants.map((venue, index) => {
-            return <TableRow key={index} {...venue} />
+          return <TableRow key={index} venue={venue} handleClick={props.handleClick}/>
           })
         }
       </tbody>
