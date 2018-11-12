@@ -1,17 +1,17 @@
-<%= form_with(model: poll, local: true) do |form| %>
-  <% if poll.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(poll.errors.count, "error") %> prohibited this poll from being saved:</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <h2 class="text-center">Make a list of restaurants for your peers to vote on!</h2>
+      <%= bootstrap_form_with(model: poll) do |f| %>
 
-      <ul>
-      <% poll.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+          <%= f.text_field :restaurant, 
+                            autofocus: true, 
+                            class: 'form-control', 
+                            placeholder: 'restaurant' %>
+
+        <%= f.submit "Create Poll", class: 'form-control btn btn-primary' %>
+      <% end %>            
     </div>
-  <% end %>
+  </div> 
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
