@@ -3,8 +3,6 @@ import axios from 'axios'
 import Table from './Table'
 import RestaurantList from './RestaurantList'
 
-let newVenue = []
-
 class Restaurants extends Component {
   state = {
             restaurants: [],
@@ -23,24 +21,30 @@ class Restaurants extends Component {
     this.fetchRestaurants(this.state)
   }
 
-  handleClick = (event) => {
-    let selectVenue = event.target.value
-    const { restaurants } = this.state
+  handleClick = (venue) => {
+    let { selectedRestaurant } = this.state
     
-    restaurants.map((venue) => {
-      if (venue.name === selectVenue) {  
-        newVenue.push(venue.name)
-      } 
-    })
-    this.setState({ selectedRestaurant: newVenue }, () => {
-      console.log(this.state.selectedRestaurant)
-    })
+    selectedRestaurant.push(venue)
+
+    this.setState({ selectedRestaurant })
+  }
+
+  createPoll = () => {
+    let { selectedRestaurant } = this.state
+    selectedRestaurant = selectedRestaurant.map(rest => rest.id)
+    axios.post('/polls.json', {poll: {restaurant_id: selectedRestaurant}})
+      .then((response) => {
+        console.log(response.data)
+        Turbolinks.visit(`/polls/${response.data.id}`)
+      })    
+
   }
 
   render(){
     const { restaurants } = this.state
     return(
       <div>
+      <button className="btn btn-primary" onClick={this.createPoll}>Create Poll</button>
       <RestaurantList 
              selectedRestaurant={this.state.selectedRestaurant}
             //  updateVenue={this.updateVenue}

@@ -1,5 +1,7 @@
 class PollsController < ApplicationController
+  skip_before_action :verify_authenticity_token
   before_action :set_poll, only: [:show, :edit, :update, :destroy]
+  before_action :validate_admin, only: [:new, :create, :destroy, :update, :edit]
 
   # GET /polls
   # GET /polls.json
@@ -25,16 +27,11 @@ class PollsController < ApplicationController
   # POST /polls
   # POST /polls.json
   def create
-    @poll = current_user.polls.new(poll_params)
-    respond_to do |format|
-      if @poll.save
-        format.html { redirect_to poll_path, notice: 'Poll was successfully created.' }
-        format.json { render :show, status: :created, location: @poll }
-      else
-        format.html { render :new }
-        format.json { render json: @poll.errors, status: :unprocessable_entity }
-      end
+    @poll = current_user.polls.create(date: Date.today)
+    poll_params[:restaurant_id].each do |restaurant_id|
+      @poll.restaurant_polls.find_or_create_by(restaurant_id: restaurant_id)
     end
+    render json: @poll
   end
 
   # PATCH/PUT /polls/1
@@ -69,6 +66,10 @@ class PollsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def poll_params
-      params.require(:poll).permit(:date)
+      params.require(:poll).permit(:restaurant_id => [])
+    end
+
+    def validate_admin
+      redirect_to users_path unless current_user.admin?
     end
 end
