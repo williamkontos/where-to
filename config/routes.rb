@@ -14,7 +14,5 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
-  resources :polls do
-    resources :restaurant_polls, only: [:index, :show]
-  end
+  resources :polls 
 end
