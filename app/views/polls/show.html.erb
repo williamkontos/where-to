@@ -1,6 +1,10 @@
 <p id="notice"><%= notice %></p>
 
-<h1><%= Poll.user_id%></h1>
+<h1><%= @poll.date %></h1>
+
+<% @poll.restaurants.each do |restaurant|%>
+<p><%= restaurant.name %></p>
+<% end %>
 
 <%= link_to 'Edit', edit_poll_path(@poll) %> |
 <%= link_to 'Back', poll_path %>

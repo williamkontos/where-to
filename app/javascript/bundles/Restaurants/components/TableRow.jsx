@@ -4,7 +4,7 @@ const TableRow = props => (
   <tr>
     <td>
       <span>
-        <button value={props.venue.name} style={{ cursor: 'pointer' }} onClick={props.handleClick} className="btn btn-primary">{props.venue.name}</button>
+        <button value={props.venue.name} style={{ cursor: 'pointer' }} onClick={ () =>  { props.handleClick(props.venue) } } className="btn btn-primary">{props.venue.name}</button>
       </span>
     </td>
     {/* <td>

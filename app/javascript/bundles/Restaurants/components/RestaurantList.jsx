@@ -4,7 +4,7 @@ const RestaurantList = (props) => (
   <div>
     <ul>
       {props.selectedRestaurant.map((venue, i) =>
-        <li key={i}>{venue}</li>
+        <li key={i}>{venue.name}</li>
       )}
     </ul>
   </div>
