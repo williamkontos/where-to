@@ -3,9 +3,9 @@ class ApplicationController < ActionController::Base
 
   def after_sign_in_path_for(resource_or_scope)
     if current_user.admin?
-      users_path
+      new_poll_path
     else
-      polls_path
+      users_path
     end
    end
 end

@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Hi, <%= current_user.name %>. Get ready to vote!</h1>
-
-<h1>Polls</h1>
+<h1>Hi, <%= current_user.name %>.</h1>
 
 <table>
   <thead>
@@ -24,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Poll', new_poll_path %>
+<%= link_to 'New Poll', new_poll_path, class:"btn btn-primary" %>

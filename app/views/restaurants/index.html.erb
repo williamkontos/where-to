@@ -11,10 +11,11 @@
 
   <tbody>
     <% @restaurants.each do |restaurant| %>
+      <%= restaurant.name %>
       <tr>
-        <td><%= link_to 'Show', restaurant %></td>
-        <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
-        <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%#= link_to 'Show', restaurant %></td>
+        <td><%#= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+        <td><%#= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
