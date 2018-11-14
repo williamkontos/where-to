@@ -1,35 +1,53 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Table from './Table'
+import RestaurantList from './RestaurantList'
+
+let newVenue = []
 
 class Restaurants extends Component {
   state = {
-            restaurants: []
+            restaurants: [],
+            selectedRestaurant: []
   }
 
-  fetchRestaurants = (name, address, phone) => {
-    axios.get(`/restaurants.json?name=${name}&address=${address}&phone=${phone}`)
+  fetchRestaurants = () => {
+    axios.get(`/restaurants.json`)
       .then((response) => {
         const restaurants = response.data
-        this.setState({ restaurants: restaurants })      
+        this.setState({ restaurants: restaurants })     
       })
   }
 
   componentDidMount(){
-    const { restaurants } = this.state
-    this.fetchRestaurants(restaurants)
+    this.fetchRestaurants(this.state)
   }
 
-  handleClick() {
-    console.log('The link was clicked')
+  handleClick = (event) => {
+    let selectVenue = event.target.value
+    const { restaurants } = this.state
+    
+    restaurants.map((venue) => {
+      if (venue.name === selectVenue) {  
+        newVenue.push(venue.name)
+      } 
+    })
+    this.setState({ selectedRestaurant: newVenue }, () => {
+      console.log(this.state.selectedRestaurant)
+    })
   }
 
   render(){
     const { restaurants } = this.state
     return(
       <div>
-      { <Table restaurants={restaurants} 
-               handleClick={this.handleClick}/> }
+      <RestaurantList 
+             selectedRestaurant={this.state.selectedRestaurant}
+            //  updateVenue={this.updateVenue}
+      />
+      <Table restaurants={restaurants} 
+             handleClick={this.handleClick} 
+      /> 
       </div>
     )
   }

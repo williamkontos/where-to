@@ -4,14 +4,19 @@ const TableRow = props => (
   <tr>
     <td>
       <span>
-        <button onClick={props.handleClick} className="btn btn-primary">{props.venue.name}</button>
+        <button value={props.venue.name} style={{ cursor: 'pointer' }} onClick={props.handleClick} className="btn btn-primary">{props.venue.name}</button>
       </span>
     </td>
-    <td>
+    {/* <td>
       <span>
         {props.venue.address}
       </span>
     </td>
+    <td>
+      <span>
+        {props.venue.phone}
+      </span>
+    </td> */}
   </tr>
 )
 
