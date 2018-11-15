@@ -6,16 +6,24 @@
                 <div class="panel-heading text-center">
                   <h3 class="panel-title"><span class="glyphicon glyphicon-arrow-right"></span> WhereTo?</h3>
                   <div class="border-top:0 list-group list-group-flush">
-                     
-                      <% @poll.restaurants.each do |restaurant|%>
-                        <div class="list-group-item">
-                          <p><%= render 'restaurant_vote', restaurant: restaurant %></p>
-                        </div>   
+
+                      <%= form_with(model: [@poll, @poll_response]) do |form| %>
+                        <% @poll.restaurants.each do |restaurant|%>
+                          <div class="list-group-item">
+                            <%= form.label(restaurant.name) do %>
+                              <%= restaurant.name %>
+                              <%= form.radio_button(:restaurant_id, restaurant.id, checked: false) %>
+                            <% end %>
+                          </div>
+                        <% end %>
+                        <%= form.submit %>
                       <% end %>
-                   
+
+
+
                     <div class="panel-footer text-center">
                       <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Vote</button>
-                      <button type="button" class="btn btn-primary">View Result</button> 
+                      <button type="button" class="btn btn-primary">View Result</button>
                     </div>
                   </div>
                 </div>

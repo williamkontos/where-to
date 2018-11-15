@@ -14,5 +14,9 @@ Rails.application.routes.draw do
 
   resources :restaurants
 
-  resources :polls 
+  resources :polls do
+    resources :poll_responses, only: [:create, :index]
+  end
+
+
 end

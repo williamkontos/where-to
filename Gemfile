@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '~> 2.5'
 
+gem "chartkick"
 gem 'devise'
 gem 'react_on_rails'
 gem 'hirb'
