@@ -34,8 +34,7 @@ class Restaurants extends Component {
     selectedRestaurant = selectedRestaurant.map(rest => rest.id)
     axios.post('/polls.json', {poll: {restaurant_id: selectedRestaurant}})
       .then((response) => {
-        console.log(response.data)
-        Turbolinks.visit(`/polls/${response.data.id}`)
+        Turbolinks.visit(`/polls/${response.data.id}/poll_responses`)
       })    
 
   }

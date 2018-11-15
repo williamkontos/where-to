@@ -3,5 +3,5 @@ class Poll < ApplicationRecord
   has_many :restaurant_polls, dependent: :destroy
   has_many :restaurants, :through => :restaurant_polls
   has_many :dishes, :through => :restaurant_polls
-  has_many :poll_responses
+  has_many :poll_responses, dependent: :destroy
 end
