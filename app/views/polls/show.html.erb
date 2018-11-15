@@ -1,10 +1,26 @@
-<p id="notice"><%= notice %></p>
+<h1 class="text-center"><%= @poll.date %></h1>
 
-<h1><%= @poll.date %></h1>
+<div class="container">
+        <div class="col-md-12">
+            <div class="panel-body">
+                <div class="panel-heading text-center">
+                  <h3 class="panel-title"><span class="glyphicon glyphicon-arrow-right"></span> WhereTo?</h3>
+                  <div class="border-top:0 list-group list-group-flush">
+                     
+                      <% @poll.restaurants.each do |restaurant|%>
+                        <div class="list-group-item">
+                          <p><%= render 'restaurant_vote', restaurant: restaurant %></p>
+                        </div>   
+                      <% end %>
+                   
+                    <div class="panel-footer text-center">
+                      <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>Vote</button>
+                      <button type="button" class="btn btn-primary">View Result</button> 
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+</div>
 
-<% @poll.restaurants.each do |restaurant|%>
-<p><%= restaurant.name %></p>
-<% end %>
-
-<%= link_to 'Edit', edit_poll_path(@poll) %> |
-<%= link_to 'Back', poll_path %>
+<%= react_component "Ballot" %>
