@@ -7,7 +7,7 @@ class Restaurants extends Component {
   state = {
             restaurants: [],
             selectedRestaurant: []
-  }
+          }
 
   fetchRestaurants = () => {
     axios.get(`/restaurants.json`)

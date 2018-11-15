@@ -1,0 +1,7 @@
+<% @restaurants.each do |restaurant| %>
+  <p>
+    <%= restaurant.name %> : <%= restaurant.votes_in(@poll) %>
+  </p>
+<% end %>
+
+<%= pie_chart @results %>

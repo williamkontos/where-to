@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_12_185004) do
+ActiveRecord::Schema.define(version: 2018_11_15_201441) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,17 @@ ActiveRecord::Schema.define(version: 2018_11_12_185004) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["restaurant_id"], name: "index_dishes_on_restaurant_id"
+  end
+
+  create_table "poll_responses", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "restaurant_id"
+    t.bigint "poll_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["poll_id"], name: "index_poll_responses_on_poll_id"
+    t.index ["restaurant_id"], name: "index_poll_responses_on_restaurant_id"
+    t.index ["user_id"], name: "index_poll_responses_on_user_id"
   end
 
   create_table "polls", force: :cascade do |t|
@@ -70,6 +81,9 @@ ActiveRecord::Schema.define(version: 2018_11_12_185004) do
   end
 
   add_foreign_key "dishes", "restaurants"
+  add_foreign_key "poll_responses", "polls"
+  add_foreign_key "poll_responses", "restaurants"
+  add_foreign_key "poll_responses", "users"
   add_foreign_key "polls", "users"
   add_foreign_key "restaurant_polls", "dishes"
   add_foreign_key "restaurant_polls", "polls"
