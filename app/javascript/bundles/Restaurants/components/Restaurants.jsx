@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import Table from './Table'
-import RestaurantList from './RestaurantList'
 
 class Restaurants extends Component {
   state = {
             restaurants: [],
-            selectedRestaurant: []
+            selectedRestaurant: [],
           }
 
   fetchRestaurants = () => {
@@ -25,7 +24,6 @@ class Restaurants extends Component {
     let { selectedRestaurant } = this.state
     
     selectedRestaurant.push(venue)
-
     this.setState({ selectedRestaurant })
   }
 
@@ -36,21 +34,22 @@ class Restaurants extends Component {
       .then((response) => {
         Turbolinks.visit(`/polls/${response.data.id}/poll_responses`)
       })    
-
   }
 
   render(){
-    const { restaurants } = this.state
+    const { restaurants, selectedRestaurant } = this.state
     return(
-      <div>
-      <button className="btn btn-primary" onClick={this.createPoll}>Create Poll</button>
-      <RestaurantList 
-             selectedRestaurant={this.state.selectedRestaurant}
-            //  updateVenue={this.updateVenue}
-      />
-      <Table restaurants={restaurants} 
-             handleClick={this.handleClick} 
-      /> 
+      <div className="select-venues animated fadeIn delay-1s">
+        <h1 className="logo">WhereTo?</h1>
+        <p>Select the restaurants you want your peers to vote on from the list below.</p>
+        <div className="restaurant-list"> 
+          <Table restaurants={restaurants}
+                  selectedRestaurant={selectedRestaurant}
+                 changeColor={this.changeColor}
+                 handleClick={this.handleClick} 
+          /> 
+        </div>
+        <button className="btn blue-gradient create-poll animated fadeIn delay-1s" onClick={this.createPoll}>Create Poll!</button>
       </div>
     )
   }

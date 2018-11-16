@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Capriola');
+
+//desktop
+@media screen and (min-width: 767px) {
+  .logo {
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
+  .venues {
+    margin: .45em;
+    width: 25%;
+  }
+
+  .create-poll {
+    width: 50%;
+    padding: 1em;
+    margin-top: 2em;
+  }
+
+  .select-venues {
+    font-family: 'Capriola', sans-serif;
+    text-align: center;
+    padding: 5em;
+  }
+
+  .green-button{
+    background-color: green;
+    color: white;
+  }
+}
+
+
+//mobile 
+@media screen and (max-width: 767px) {
+  .venues {
+    margin: .25em;
+    width: 75%;
+  }
+
+  .create-poll {
+    width: 80%;
+    margin-top: 1em;
+  }
+
+  .select-venues {
+    font-family: 'Capriola', sans-serif;
+    text-align: center;
+  }
+
+  .restaurant-list {
+    text-align: center;
+  }
+}
