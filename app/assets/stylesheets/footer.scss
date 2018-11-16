@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css?family=Capriola');
+
+@media screen and (min-width: 767px) {
+  .page-footer {
+    padding: 2em;
+    background-color: #0e64b4;
+    font-family: 'Capriola';
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .page-footer {
+    padding: 1.5em;
+    background-color: #0e64b4;
+  }
+}

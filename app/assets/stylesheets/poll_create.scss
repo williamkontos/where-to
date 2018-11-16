@@ -36,6 +36,14 @@
 
 //mobile 
 @media screen and (max-width: 767px) {
+  .logo {
+    margin-bottom: 1em;
+  }
+
+  p {
+    margin-bottom: 1em;
+  }
+
   .venues {
     margin: .25em;
     width: 75%;
