@@ -12,9 +12,12 @@ class PollsController < ApplicationController
   # GET /polls/1
   # GET /polls/1.json
   def show
-    @poll = Poll.find(params[:id])
+    @poll = Poll.last
     if PollResponse.where(user: current_user, poll: @poll).exists?
       return redirect_to poll_poll_responses_path(@poll), notice: "Your vote has already been recorded!"
+    end
+    if DateTime.now > Poll.last.end_time
+      redirect_to poll_poll_responses_path(@poll)
     end
     @poll_response = @poll.poll_responses.new
   end
