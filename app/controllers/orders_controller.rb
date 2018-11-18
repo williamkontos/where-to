@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
     if @order.save
       redirect_to [@poll, @order], notice: "Your order will be coming soon"
     else
-      redirect_to root_path, notice: "You already ordered"
+      redirect_to [@poll, @order], notice: "You already ordered"
     end
   end
 
