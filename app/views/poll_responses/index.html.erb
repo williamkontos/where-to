@@ -1,3 +1,26 @@
 <%= react_component "Results", props: { poll: @poll.id } %>
 
 <%= pie_chart @results %>
+
+<% if @poll.closed? && @poll.winner %>
+  <h1>Poll Closed!</h1>
+
+  <h3>Winner: <%= @poll.winner.name %></h3>
+  <h3>Choose your Dish:</h3>
+
+  <%= form_with(model: [@poll, @order]) do |form| %>
+    <% @poll.winner.dishes.each do |dish|%>
+      <div class="btn-group" data-toggle="buttons"">
+        <%= form.label(dish.name) do %>
+          <div>
+            <%= dish.name %>
+            <%= form.radio_button(:dish_id, dish.id, checked: false) %>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+    <%= form.submit "Order!", class: "btn btn-success" %>
+  <% end %>
+
+<% end %>

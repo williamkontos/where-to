@@ -1,0 +1,13 @@
+<h1>Orders for <%= @poll.date %> (<%= @poll.winner.name %>)</h1>
+
+<ul>
+  <% @summary.each do |dish, order_count| %>
+    <li><%= dish %>: <%= order_count %></li>
+  <% end %>
+</ul>
+
+<ul>
+  <% @orders.each do |order| %>
+    <%= order.user.name %>: <%= order.dish.name %>
+  <% end %>
+</ul>
