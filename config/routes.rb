@@ -16,6 +16,7 @@ Rails.application.routes.draw do
 
   resources :polls do
     resources :poll_responses, only: [:create, :index]
+    resources :orders, only: [:create, :index, :show]
   end
 
 

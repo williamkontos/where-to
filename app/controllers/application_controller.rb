@@ -5,11 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin?
       new_poll_path
     else
-      if Poll.where(date: Date.today).exists?
-        Poll.find_by(date: Date.today)
-      else
-        @poll #sorry no poll is active
-      end
+      Poll.last
     end
    end
 end
