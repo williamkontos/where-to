@@ -1,7 +1,3 @@
-<% @restaurants.each do |restaurant| %>
-  <p>
-    <%= restaurant.name %> : <%= restaurant.votes_in(@poll) %>
-  </p>
-<% end %>
+<%= react_component "Results", props: { poll: @poll.id } %>
 
 <%= pie_chart @results %>

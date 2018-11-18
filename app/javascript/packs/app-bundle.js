@@ -1,9 +1,9 @@
 import ReactOnRails from 'react-on-rails';
 
 import Restaurants from '../bundles/Restaurants/components/Restaurants.jsx'
-import Ballot from '../bundles/Ballot/components/Ballot'
+import Results from '../bundles/Results/components/Results.jsx'
 
 ReactOnRails.register({
   Restaurants,
-  Ballot
+  Results
 })

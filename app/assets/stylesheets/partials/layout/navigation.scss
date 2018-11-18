@@ -21,10 +21,6 @@ nav {
   .col-sm-5, .col-sm-7 {
     padding: 0;
   }
-
-  .navbar-brand {
-    padding-left: 1.5em;
-  }
 }
 
 .navbar-default, .navbar-toggle:focus, .collapsed, button.navbar-toggle {
@@ -78,6 +74,10 @@ nav {
   background: white !important;
 }
 
+.home-page {
+  font-family: 'Capriola', sans-serif;
+}
+
 #user-name {
-  font-family: 'Capriola'
+  font-family: 'Capriola', sans-serif;
 }

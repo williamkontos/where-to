@@ -41,7 +41,7 @@ class Restaurants extends Component {
     return(
       <div className="select-venues animated fadeIn delay-1s">
         <h1 className="logo">WhereTo?</h1>
-        <p>Select the restaurants you want your peers to vote on from the list below.</p>
+        <p className="poll-instructions">Select the restaurants you want your peers to vote on from the list below.</p>
         <div className="restaurant-list"> 
           <Table restaurants={restaurants}
                   selectedRestaurant={selectedRestaurant}
@@ -49,7 +49,7 @@ class Restaurants extends Component {
                  handleClick={this.handleClick} 
           /> 
         </div>
-        <button className="btn blue-gradient create-poll animated fadeIn delay-1s" onClick={this.createPoll}>Create Poll!</button>
+        <button className="btn btn-outline-secondary waves-effect create-poll animated fadeIn delay-1s" onClick={this.createPoll}>Create Poll!</button>
       </div>
     )
   }

@@ -1,29 +1,18 @@
-<h1 class="text-center"><%= @poll.date %></h1>
-
-<div class="container">
-        <div class="col-md-12">
-            <div class="panel-body">
-                <div class="panel-heading text-center">
-                  <h3 class="panel-title"><span class="glyphicon glyphicon-arrow-right"></span> WhereTo?</h3>
-                  <div class="border-top:0 list-group list-group-flush">
-
-                      <%= form_with(model: [@poll, @poll_response]) do |form| %>
-                        <% @poll.restaurants.each do |restaurant|%>
-                          <div class="list-group-item">
-                            <%= form.label(restaurant.name) do %>
-                              <%= restaurant.name %>
-                              <%= form.radio_button(:restaurant_id, restaurant.id, checked: false) %>
-                            <% end %>
-                          </div>
-                        <% end %>
-                        <div class="panel-footer text-center">
-                          <button type="button" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span><%= form.submit "Vote!", class: "btn btn-success" %></button>
-                        </div>
-                      <% end %>
-                  </div>
-                </div>
-            </div>
-        </div>
+<div class="col-md-12">
+  <%= form_with(model: [@poll, @poll_response]) do |form| %>
+    <% @poll.restaurants.each do |restaurant|%>
+      <div class="btn-group" data-toggle="buttons"">
+        <%= form.label(restaurant.name) do %>
+          <div>
+            <%= restaurant.name %>
+            <%= form.radio_button(:restaurant_id, restaurant.id, checked: false) %>
+          </div>
+        <% end %>
+      </div>
+      </div>
+    <% end %>
+    <%= form.submit "Vote!", class: "btn btn-success" %>
+  <% end %>
 </div>
 
-<%= react_component "Ballot" %>
+
