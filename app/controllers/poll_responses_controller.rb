@@ -12,10 +12,19 @@ class PollResponsesController < ApplicationController
   end
 
   def index
-    @restaurants = @poll.restaurants
-    @results  = PollResponse.where(poll: @poll).group_by do |response|
-                  response.restaurant.name
-                end.transform_values{ |v| v.count }
+    respond_to do |format|
+      format.html do 
+        @restaurants = @poll.restaurants
+      end
+      
+      @results  = PollResponse.where(poll: @poll).group_by do |response|
+                    response.restaurant.name
+                  end.transform_values{ |v| v.count }
+                
+      format.json do
+        render json: @results
+      end
+    end
   end
 
   private
