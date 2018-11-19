@@ -9,7 +9,7 @@ class Poll < ApplicationRecord
   has_many :orders
 
   def set_poll_end_time
-    self.end_time = DateTime.now + 60.seconds
+    self.end_time = DateTime.now + 90.seconds
   end
 
   def winner

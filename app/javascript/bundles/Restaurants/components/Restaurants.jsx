@@ -40,8 +40,7 @@ class Restaurants extends Component {
     const { restaurants, selectedRestaurant } = this.state
     return(
       <div className="select-venues animated fadeIn delay-1s">
-        <h1 className="logo">WhereTo?</h1>
-        <p className="poll-instructions">Select the restaurants you want your peers to vote on from the list below.</p>
+        <p className="poll-instructions">Select the restaurants you want to create a poll with from the list below.</p>
         <div className="restaurant-list"> 
           <Table  restaurants={restaurants}
                   selectedRestaurant={selectedRestaurant}
