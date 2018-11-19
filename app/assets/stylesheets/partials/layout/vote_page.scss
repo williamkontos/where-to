@@ -2,13 +2,13 @@
 
 .buffer {
   font-family: 'Capriola', sans-serif;
-  font-size: 3em;
+  font-size: 6em;
   text-align: center;
   margin-top: 2em;
   position: relative;
   text-transform: uppercase;
   letter-spacing: 6px;
-  font-size: 3em;
+  font-size: 4em;
   font-weight: 900;
   text-decoration: none;
   color: white;
@@ -21,7 +21,6 @@
   -ms-background-clip: text;
   -ms-text-fill-color: transparent;
   background-clip: text;
-  text-fill-color: transparent;
   background-image: linear-gradient(45deg, 
                     black, 
                     rgb(128, 21, 21),
@@ -39,6 +38,55 @@
   100% { transform: skewX(0deg); }  
 }
 
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  width: 64px;
+  height: 400px;
+  margin: auto;
+}
+
+.lds-ring div {
+  padding: 2em;
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 10px solid #aa2727;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #aa2727 transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.vote-caption {
+  font-family: 'Capriola', sans-serif;
+  text-align: center;
+  margin-top: 3em;
+}
+
 .vote-submit {
   display: flex;
   justify-content: center;
@@ -53,7 +101,7 @@
 
 .form-container {
   margin-top: .25em;
-  width: 57%;
+  width: 57.5%;
   font-family: 'Capriola', sans-serif;
   display: flex;
   justify-content: flex-end;
@@ -111,3 +159,4 @@
   margin: auto;
   width: 100%;
 }
+

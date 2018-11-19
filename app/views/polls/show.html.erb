@@ -1,4 +1,5 @@
 <div class="col-md-12">
+<h3 class="vote-caption">Where to? Cast your vote below!</h3>
   <%= form_with(model: [@poll, @poll_response]) do |form| %>
     <% @poll.restaurants.each do |restaurant|%>
       <div class="btn-group form-container" data-toggle="buttons">
