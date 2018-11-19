@@ -1,7 +1,9 @@
-<div class="container">
+<%= image_tag 'WhereTo_Logo', class: "main-logo" %>
+
+<div class="container login-form">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <h2 class="text-center">Log in</h2>
+      <h2 class="text-center login">Log in</h2>
       <%= bootstrap_form_for(resource, 
                             as: resource_name, 
                             url: session_path(resource_name)) do |f| %>
@@ -21,8 +23,14 @@
           <%= f.check_box :remember_me %>
         <% end -%>
 
-        <%= f.submit "Log in", class: 'form-control login-button' %>
+        <%= f.submit "Log in", class: 'form-control login-button btn btn-outline-danger waves-effect' %>
       <% end %>            
     </div>
   </div> 
+</div>
+
+<div class="parent-food">
+  <%= image_tag 'food-1', class: "food-left" %>
+  <%= image_tag 'food-2', class: "food-middle" %>
+  <%= image_tag 'food-3', class: "food-right" %>
 </div>
