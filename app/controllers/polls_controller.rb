@@ -16,6 +16,9 @@ class PollsController < ApplicationController
     if PollResponse.where(user: current_user, poll: @poll).exists?
       return redirect_to poll_poll_responses_path(@poll), notice: "Your vote has already been recorded!"
     end
+    if DateTime.now > @poll.end_time
+      redirect_to poll_poll_responses_path(@poll)
+    end
     unless @poll.closed? 
       redirect_to poll_poll_responses_path(@poll)
     end

@@ -43,10 +43,9 @@ class Restaurants extends Component {
         <h1 className="logo">WhereTo?</h1>
         <p className="poll-instructions">Select the restaurants you want your peers to vote on from the list below.</p>
         <div className="restaurant-list"> 
-          <Table restaurants={restaurants}
+          <Table  restaurants={restaurants}
                   selectedRestaurant={selectedRestaurant}
-                 changeColor={this.changeColor}
-                 handleClick={this.handleClick} 
+                  handleClick={this.handleClick} 
           /> 
         </div>
         <button className="btn btn-outline-secondary waves-effect create-poll animated fadeIn delay-1s" onClick={this.createPoll}>Create Poll!</button>

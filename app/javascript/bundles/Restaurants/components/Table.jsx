@@ -8,8 +8,7 @@ const Table = props => (
           return <TableRow key={index} 
                            venue={venue} 
                            selected={props.selectedRestaurant.includes(venue)}
-                           handleClick={props.handleClick}
-                           handleCheck={props.handleCheck} />             
+                           handleClick={props.handleClick}/>             
           })
         }
   </div>

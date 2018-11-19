@@ -7,7 +7,7 @@ const TableRow = props => (
           style={{ cursor: 'pointer' }} 
           onClick={ () =>  { props.handleClick(props.venue) } } 
           className={ props.selected ? "btn btn-outline-secondary waves-effect venues" : "btn btn-outline-danger waves-effect venues"}
-        >{props.venue.name}
+        > {props.venue.name}
         </button>
       </div>
 )
