@@ -1,7 +1,7 @@
 <%if current_user.admin? %>
   <h1 class="buffer">Waiting for votes...</h1>
   <div class="lds-ring"><div></div><div></div><div></div><div></div></div>
-  <%= image_tag 'WhereTo_Icon', class:"logo-icon animated fadeIn" %>
+  <%= image_tag 'WhereTo_Icon.svg', class:"logo-icon animated fadeIn" %>
   <% if DateTime.now > @poll.end_time %>
     <%= controller.redirect_to poll_orders_path(@poll) %>
   <% end %>
