@@ -18,7 +18,7 @@ User.create(name: "Angel", email: "angel@wyncode.co", password: "password")
 res = [Restaurant.find_or_create_by(name: "R House Wynwood", address: "2727 NW 2nd Ave", city: "Miami", state: "FL", zip: "33127", phone: "305-576-0201"),
 Restaurant.find_or_create_by(name: "Wood Tavern", address: "2531 NW 2nd Ave", city: "Miami", state: "FL", zip: "33127", phone: "305-748-2828"),
 Restaurant.find_or_create_by(name: "Coyo Taco ", address: "2300 NW 2nd Ave Unit 3", city: "Miami", state: "FL", zip: "33127", phone: "305-573-8228"),
-Restaurant.find_or_create_by(name: "KYU", address: "251 NW 25th St", city: "Miami", state: "FL", zip: "33127", phone: "7865770150"),
+Restaurant.find_or_create_by(name: "KYU", address: "251 NW 25th St", city: "Miami", state: "FL", zip: "33127", phone: "786-577-0150"),
 Restaurant.find_or_create_by(name: "SuViche Wynwood", address: "2751 N Miami Ave", city: "Miami", state: "FL", zip: "33127", phone: "305-501-5010"),
 Restaurant.find_or_create_by(name: "Wynwood Kitchen & Bar", address: "2550 NW 2nd Ave", city: "Miami", state: "FL", zip: "33127", phone: "305-722-8959"),
 Restaurant.find_or_create_by(name: "Beaker & Gray", address: "2637 N Miami Ave", city: "Miami", state: "FL", zip: "33127", phone: "305-699-2637"),
