@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
     if current_user.admin?
       new_poll_path
     else
-      Poll.last
+      user_path(@user)
     end
    end
 end
