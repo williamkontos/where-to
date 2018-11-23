@@ -23,3 +23,10 @@ _Voter process_
 + Their order is then included in the order summary for the admin. 
 
 
+
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/whereto_homepage.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/pollcreation_page.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/selected_venues.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/voting_page.png)
+
+
