@@ -31,7 +31,7 @@ _Voter process_
 
 + They can then vote on the restaurant. After the votes are counted and a winner is declared, they are givin a list of three items on the winning venue's menu from which they can choose.
 
-+ Their order is then included in the order summary for the admin. 
++ Their order is then included in the order summary for the admin.
 
 
 
