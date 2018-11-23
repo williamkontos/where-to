@@ -2,7 +2,18 @@
 
 _A voting system application to help small and midsized companies order food for their employees._
 
-Built with Ruby on Rails and React. User authentication is handled using the Devise gem, and all forms and buttons are built and styled with Bootstrap. 
+Built with... 
+
++ Ruby on Rails 
++ React
++ HTML
++ CSS
++ JavaScript
++ Axios 
++ Photoshop
++ Illustrator
+
+User authentication is handled using the Devise gem, and all forms and buttons are built and styled with Bootstrap. 
 
 **WhereTo?** is a fun, easy, and fair way to take the headache out of large food orders for company meals and the like. This app was built with the Operations Manager, Party Planner, and Production Assistant type positions in mind. 
 
