@@ -38,6 +38,10 @@ _Voter process_
 ![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/whereto_homepage.png)
 ![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/pollcreation_page.png)
 ![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/selected_venues.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/adminbuffer-page.png)
 ![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/voting_page.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/winnerdisplay_page.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/thankyou-page.png)
+![whereto-homepage](https://raw.githubusercontent.com/williamkontos/where-to/master/ordersummary-page.png)
 
 
