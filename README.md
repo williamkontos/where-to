@@ -1,42 +1,25 @@
-# README
+# WhereTo?
 
-This is a boilerplate Rails project that uses:
+_A voting system application to help small and midsized companies order food for their employees._
 
-* `ruby ~> 2.5`
-* `postgresql` as the database
-* `webpacker` with `react`
-* the `react_on_rails` gem
+Built with Ruby on Rails and React. User authentication is handled using the Devise gem, and all forms and buttons are built and styled with Bootstrap. 
 
-## Instructor Setup
+**WhereTo?** is a fun, easy, and fair way to take the headache out of large food orders for company meals and the like. This app was built with the Operations Manager, Party Planner, and Production Assistant type positions in mind. 
 
-* `git clone git@github.com:wyncode/final_project_template.git`
-* `cd final_project_template`
-* `git remote remove origin`
-* Create a repo on GitHub that matches the project name
-* `git remote add origin that-repo-name` && `git push origin -u master`
-* Make `master` a [protected branch](https://help.github.com/articles/configuring-protected-branches/)
-* Pull Requests should only be mergeable after 2 reviews
-* At least 1 review needs to be from a [CODEOWNER](https://help.github.com/articles/about-codeowners/)
-* Invite team members as collaborators with write access
+_Admin process_
 
-## Student Setup
++ An admin can sign in and create a poll from a list of restaurants in the area.
 
-* `rails db:create` (with your Postgres server up and running)
-* `rails s`
++ While users are voting, the admin is sent to a buffer page until the polls are closed (90 seconds).
 
-## Collaboration
++ When the polls close and the users have ordered the meal they want from the winning restaurant, the admin will be redirected to an order summary page where they can see the info of the venue, who ordered what, as well as an itemized list and count of the orders.
 
-* Talk to an instructor about the next feature / enhancement / bugfix you would like to address
-* Create an issue with a User Story and Acceptance Criteria
-* Create a branch that corresponds with your issue
-* Submit a pull request into master
-* Request a code review from one of your teammates
-* Once it's approved, request a code review from one or more of the project's [CODEOWNERS](CODEOWNERS)
+_Voter process_
 
-## Deployment
++ A user can sign in and see the most recent open poll created by the admin. 
 
-* `heroku create your-app-name`
-* `heroku buildpacks:set heroku/ruby`
-* `heroku buildpacks:add --index 1 heroku/nodejs`
-* `git push heroku master`
-* `heroku run rails db:migrate`
++ They can then vote on the restaurant. After the votes are counted and a winner is declared, they are givin a list of three items on the winning venue's menu from which they can choose.
+
++ Their order is then included in the order summary for the admin. 
+
+
