@@ -1,4 +1,5 @@
 # WhereTo?
+#### Prototype
 
 _A voting system application to help small and midsized companies order food for their employees._
 
